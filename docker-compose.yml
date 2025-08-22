@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mern_school_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: school
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mern-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mern_school_backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/school
+      # Add any other backend env variables here (e.g., secrets, API keys)
+    depends_on:
+      - mongo
+    networks:
+      - mern-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mern_school_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_BASE_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - mern-net
+
+volumes:
+  mongo_data:
+
+networks:
+  mern-net:
+    driver: bridge
