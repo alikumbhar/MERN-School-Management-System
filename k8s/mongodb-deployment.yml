@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  namespace: sms-app
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-app
+  template:
+    metadata:
+      labels:
+        app: mongodb-app
+    spec:
+      containers:
+      - name: mongodb-app
+        image: mongo:latest
+        ports:
+        - containerPort: 27017
+      volumes:
+        - name: my-volume
+          persistentVolumeClaim: 
+            claimName: mongo-pvc
+        
+
+
