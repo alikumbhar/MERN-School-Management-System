@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: alikumbhar/mern-apps:null
+          image: alikumbhar/mern-apps:smsapp-frontend
           ports:
             - containerPort: 80
