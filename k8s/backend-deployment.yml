@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: alikumbhar/mern-apps:01
+        image: alikumbhar/mern-apps:appback01
         resources:
           limits:
             memory: "128Mi"
