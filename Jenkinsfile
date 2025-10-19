@@ -110,12 +110,12 @@ pipeline {
 
         success{
             archiveArtifacts artifacts: '*.xml', followSymlinks: false
-            build job: "sms-app-CD", parameters: [
+            build job: "SMS-Application-CD", parameters: [
                 string(name: 'FRONTEND_DOCKER_TAG', value: "${params.FRONTEND_DOCKER_TAG}"),
                 string(name: 'BACKEND_DOCKER_TAG', value: "${params.BACKEND_DOCKER_TAG}")
             ]
         }
     }
-    //if success system will trigger CD job using build job
+    //if success system will trigger SMS-Application-CD job using build job
 
 }
