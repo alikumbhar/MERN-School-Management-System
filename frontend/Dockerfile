@@ -18,7 +18,7 @@ COPY . .
 RUN npm run build
 
 # ----------------------------
-# 2) Serve with Nginx
+# 2) Create Serve with Nginx
 # ----------------------------
 FROM nginx:1.27-alpine
 
