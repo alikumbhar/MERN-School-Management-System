@@ -14,7 +14,7 @@ COPY . .
 # Stage 2: development
 FROM node:18-alpine
 
-# Set working directory
+# Set working directory   
 WORKDIR /app
 
 # Create a non-root user
