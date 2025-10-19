@@ -5,9 +5,9 @@ MERN stack app. Streamline school management, class organization, and add studen
 ![Preview Image](https://github.com/alikumbhar/MERN-School-Management-System/blob/8bb8de688599f1dad815ca7a8dca8a57c66f88c9/backend/homepage.PNG)
 #
 
-# SMS APP MERN STACK END to END Deployment
+# Student Management System End to End Deployment CICD using Jenkins
 
-### Real Time Deployment, I will Show you how to deploy an end to end Real Time three tier MERN stack Application Using EKS cluster.
+#### Real Time Deployment, I will Show you how to deploy an end to end Real Time three tier MERN stack Application Using EKS cluster.
 #
 ### <span style="background-color:FF9013;color:black">Project Deployment Flow:</span>
 <img src="devsecops-gitops.jpg" />
